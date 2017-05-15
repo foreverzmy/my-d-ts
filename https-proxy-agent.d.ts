@@ -11,9 +11,12 @@ declare module "https-proxy-agent" {
 		headers?: { [key: string]: any };
 	}
 
-	function proxy(proxy: string | IHttpsProxyAgentOptions): https.Agent;
+	class HttpsProxyAgent {
+		constructor(proxy: string);
+		constructor(options: IHttpsProxyAgentOptions);
+	}
 
-	namespace proxy { }
+	namespace HttpsProxyAgent {}
 
-	export = proxy;
+	export = HttpsProxyAgent;
 }
