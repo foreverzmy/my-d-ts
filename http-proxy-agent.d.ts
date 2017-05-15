@@ -2,9 +2,12 @@ declare module "http-proxy-agent" {
 	import * as url from 'url';
 	import * as http from 'http';
 
-	function proxy(options: string | url.URL): http.Agent;
+	class HttpProxyAgent {
+		constructor(proxy: string);
+		constructor(options: url.Url);
+	}
 
-	namespace proxy {}
+	namespace HttpProxyAgent {}
 
-	export = proxy;
+	export = HttpProxyAgent;
 }
