@@ -11,7 +11,7 @@ declare module "https-proxy-agent" {
 		headers?: { [key: string]: any };
 	}
 
-	class HttpsProxyAgent {
+	class HttpsProxyAgent extends https.Agent {
 		constructor(proxy: string);
 		constructor(options: IHttpsProxyAgentOptions);
 	}
