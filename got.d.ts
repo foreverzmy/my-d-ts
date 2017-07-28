@@ -3,14 +3,19 @@ declare module "got" {
 	import * as http from 'http';
 
 	namespace got {
+		export type GotRetryFunction = (retry: number, error: Error) => number;
+
 		export interface IOptions extends http.RequestOptions {
 			body?: string | Buffer | stream.Stream;
 			encoding?: string;
 			form?: boolean;
 			json?: boolean;
 			query?: string | object;
-			retries?: number | object;
+			retries?: number | GotRetryFunction;
+			timeout?: number;
 			followRedirect?: boolean;
+			decompress?: boolean;
+			useElectronNet?: boolean;
 		}
 
 		export interface IGotStream extends stream.Stream {

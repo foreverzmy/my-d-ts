@@ -12,6 +12,7 @@ declare module "globby" {
 
 		function sync(patterns: string[], options?: glob.IOptions): string[];
 		function generateGlobTasks(patterns: string[], options?: glob.IOptions): globby.IGlobTasks[];
+		function hasMagic(patterns: string[], options?: glob.IOptions): boolean;
 	}
 
 	export = globby;
