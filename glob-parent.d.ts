@@ -1,10 +1,7 @@
 declare module "glob-parent" {
+	function globParent(pattern: string): string;
 
-	function parent(pattern: string): string;
+	namespace globParent { }
 
-	namespace parent {
-		// empty
-	}
-
-	export = parent;
+	export = globParent;
 }
